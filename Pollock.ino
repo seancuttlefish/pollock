@@ -1,4 +1,6 @@
 // Pollock - Autonomous Drawing Robot
+// See http://interactdigitalarts.uk/pollock
+// This uses some snippets of code found on the Internet as well as fresh code. Thanks Internet people.
 
 #include <NewPing.h>
 #include <AccelStepper.h>
@@ -13,7 +15,7 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 int sonarDistance;
 
 // Stepper Motor
-#define MAX_SPEED 520
+#define MAX_SPEED 520                 // You may need to experument with this to best suit your stepper motors
 AccelStepper rightMotor(AccelStepper::HALF4WIRE, 2,4,3,5, true);
 AccelStepper leftMotor(AccelStepper::HALF4WIRE, 6,8,7,9, true);
 MultiStepper motors;
@@ -44,17 +46,23 @@ void setup() {
 }
 
 void loop() {
-  forward(100);
+  forward(5);
   sonarDistance = sonar.ping_cm();    // Send ping, get distance in cm (0 = outside set distance range)
 
   Serial.print("p: ");
   Serial.print(sonarDistance);
   Serial.println("cm");
 
+  // Settings for vertical (front facing) ultrasonic sensor
   if ((sonarDistance > 0) && (sonarDistance < 20)) {
-    backward(100);
-    left(60);
+    backward(10);
+    left(90);
   }
+  // Settings for horizontal (down facing) ultrasonic sensor
+  //if (sonarDistance > 6) {
+  //  backward(10);
+  //  left(90);
+  //}
 
   // done();
 }

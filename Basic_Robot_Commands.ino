@@ -1,3 +1,7 @@
+// Pollock - Autonomous Drawing Robot
+// See http://interactdigitalarts.uk/pollock
+// This uses some snippets of code found on the Internet as well as fresh code. Thanks Internet people.
+
 // Basic Robot Commands
 
 // - pendown()
