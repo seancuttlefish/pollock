@@ -54,10 +54,11 @@ void loop() {
   Serial.println("cm");
 
   // Settings for vertical (front facing) ultrasonic sensor
-  if ((sonarDistance > 0) && (sonarDistance < 20)) {
-    backward(10);
-    left(90);
-  }
+  //if ((sonarDistance > 0) && (sonarDistance < 20)) {
+  //  backward(10);
+  //  left(90);
+  //}
+  
   // Settings for horizontal (down facing) ultrasonic sensor
   //if (sonarDistance > 6) {
   //  backward(10);
