@@ -71,6 +71,13 @@ void right(float degrees) {
   rightMotor.setCurrentPosition(0);
 }
 
+void cicle(float size) {
+  for(int i=0; i<=360; i++) {
+    forward(1);
+    left(1);
+  }
+}
+
 void done() {
   penup();
   for (int i=2; i<10; i++) {
